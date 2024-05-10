@@ -10,6 +10,10 @@ class tesrScreen extends StatefulWidget {
 class _tesrScreenState extends State<tesrScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("hi"),
+      ),
+    );
   }
 }
