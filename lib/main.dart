@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_prism/gg.dart';
 import 'package:new_prism/navbar.dart';
 
 var greenColor = ColorScheme.fromSeed(
@@ -10,8 +11,9 @@ var goldColor = ColorScheme.fromSeed(
 
 void main() {
   runApp(const MaterialApp(
-      // home: Homescreen(),
-      // home: Navbar1(),
-      //home: Community(),
-      ));
+    // home: Homescreen(),
+    // home: Navbar1(),
+    //home: Community(),
+    home: tesrScreen(),
+  ));
 }
