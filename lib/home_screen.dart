@@ -98,6 +98,7 @@ class Homescreen extends StatelessWidget {
                       width: MediaQuery.of(context).size.width / 2.2,
                       margin: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                       decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey),
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(25.0),
                         boxShadow: [
