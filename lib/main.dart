@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 
+var greenColor = ColorScheme.fromSeed(
+  seedColor: const Color.fromARGB(255, 17, 79, 90),
+);
+var goldColor = ColorScheme.fromSeed(
+  seedColor: const Color.fromARGB(255, 251, 171, 58),
+);
+
 void main() {
   runApp(const MyApp());
 }
@@ -7,8 +14,6 @@ void main() {
 //hellooo
 
 // This is to show sync on git hub
-
-// fuck you
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
