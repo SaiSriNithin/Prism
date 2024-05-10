@@ -11,8 +11,8 @@ var goldColor = ColorScheme.fromSeed(
 
 void main() {
   runApp(const MaterialApp(
-      // home: Homescreen(),
-      // home: Navbar1(),
-      //home: Community(),
-      ));
+    // home: Homescreen(),
+    home: Navbar1(),
+    //home: Community(),
+  ));
 }
