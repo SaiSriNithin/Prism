@@ -84,7 +84,10 @@ class Homescreen extends StatelessWidget {
               SizedBox(
                 height: 10.0,
               ),
-              Text('categories'),
+              Text(
+                'categories',
+                style: TextStyle(color: Colors.black),
+              ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
                 child: ListView.builder(
@@ -116,7 +119,7 @@ class Homescreen extends StatelessWidget {
                           Text(texts[index],
                               style: TextStyle(
                                   fontSize: 16.0,
-                                  color: Colors.black,
+                                  color: const Color.fromARGB(255, 0, 0, 0),
                                   fontWeight: FontWeight.bold)),
                         ],
                       ),
@@ -129,9 +132,9 @@ class Homescreen extends StatelessWidget {
                 child: Text(
                   'Here are your latest updates',
                   style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w300,
-                  ),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w300,
+                      color: Colors.black),
                 ),
               ),
               const SizedBox(
@@ -147,11 +150,6 @@ class Homescreen extends StatelessWidget {
                     childAspectRatio: 3 / 2,
                   ),
                   children: [
-                    CustomButton(
-                        buttonText: 'test2',
-                        icon: Icons.tab,
-                        onPressed: Test(),
-                        subtext: ''),
                     CustomButton(
                       buttonText: 'Attendance',
                       icon: Icons.person,
@@ -179,12 +177,6 @@ class Homescreen extends StatelessWidget {
                     CustomButton(
                       buttonText: 'Transpoart',
                       icon: Icons.bus_alert_rounded,
-                      onPressed: Test(),
-                      subtext: '',
-                    ),
-                    CustomButton(
-                      buttonText: 'Books',
-                      icon: Icons.book,
                       onPressed: Test(),
                       subtext: '',
                     ),
