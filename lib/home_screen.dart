@@ -148,6 +148,11 @@ class Homescreen extends StatelessWidget {
                   ),
                   children: [
                     CustomButton(
+                        buttonText: 'test',
+                        icon: Icons.tab,
+                        onPressed: Test(),
+                        subtext: ''),
+                    CustomButton(
                       buttonText: 'Attendance',
                       icon: Icons.person,
                       onPressed: Test(),
