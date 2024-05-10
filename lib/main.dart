@@ -8,6 +8,8 @@ void main() {
 
 // This is to show sync on git hub
 
+// fuck you
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
