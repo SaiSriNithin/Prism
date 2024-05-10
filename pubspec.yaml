@@ -38,12 +38,9 @@ dependencies:
   crystal_navigation_bar: ^1.0.0
   iconly: ^1.0.1
   google_fonts: ^6.2.1
-<<<<<<< HEAD
   smooth_page_indicator: ^1.1.0
   shared_preferences: ^2.2.3
-=======
   simple_floating_bottom_nav_bar: ^0.0.3
->>>>>>> a6a10b4394812bbdec4167993b0282aeee852241
 
 dev_dependencies:
   flutter_test:
