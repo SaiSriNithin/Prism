@@ -11,6 +11,7 @@ var goldColor = ColorScheme.fromSeed(
 
 void main() {
   runApp(const MaterialApp(
+    //this is test tharak
     // home: Homescreen(),
     home: Navbar1(),
     //home: Community(),
