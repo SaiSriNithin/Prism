@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:new_prism/curvedappbar.dart';
-import 'package:new_prism/custombutton.dart';
-import 'package:new_prism/test.dart';
+import 'package:new_prism/widgets/curvedappbar.dart';
+import 'package:new_prism/widgets/custombutton.dart';
+import 'package:new_prism/screens/student_screens/test.dart';
 
 class Homescreen extends StatelessWidget {
   const Homescreen({super.key});
@@ -11,9 +11,10 @@ class Homescreen extends StatelessWidget {
     final icons = [Icons.schedule_rounded, Icons.home_sharp, Icons.chat];
     final texts = ["Today's Schedule", "Hostel", "Chats"];
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 247, 248, 251),
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(120.0),
+        preferredSize:
+            Size.fromHeight(MediaQuery.of(context).size.height * 0.17),
         child: ClipPath(
           clipper: AppBarClipper(),
           child: Container(
@@ -25,23 +26,35 @@ class Homescreen extends StatelessWidget {
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 40.0),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.06),
                     Padding(
-                      padding: EdgeInsets.fromLTRB(0, 10, 25, 10),
+                      padding: const EdgeInsets.fromLTRB(0, 10, 25, 10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
+                        children: [
                           Text('Welcome 👋',
-                              style: TextStyle(
-                                  fontSize: 18.0, color: Colors.white)),
-                          SizedBox(height: 5.0),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headlineLarge!
+                                  .copyWith(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .background)),
+                          const SizedBox(height: 5.0),
                           Text(
                             'Nithin',
-                            style: TextStyle(color: Colors.white),
+                            style: Theme.of(context)
+                                .textTheme
+                                .headlineLarge!
+                                .copyWith(
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .background),
                           ),
                           // Text(
                           //   whois.isSignedIn == 'parent'
@@ -59,9 +72,9 @@ class Homescreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(50, 0, 0, 0),
                   child: Container(
-                    height: 76.0,
-                    width: 76.0,
-                    decoration: BoxDecoration(
+                    height: 70.0,
+                    width: 70.0,
+                    decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
                         image: AssetImage('assets/MREC_logo.png'),
@@ -75,18 +88,24 @@ class Homescreen extends StatelessWidget {
           ),
         ),
       ),
-      body: Container(
+      body: SizedBox(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 10.0,
               ),
               Text(
                 'categories',
-                style: TextStyle(color: Colors.black),
+                style: Theme.of(context)
+                    .textTheme
+                    .displaySmall!
+                    .copyWith(color: Theme.of(context).colorScheme.tertiary),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.01,
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 20,
@@ -95,52 +114,65 @@ class Homescreen extends StatelessWidget {
                   itemCount: 3,
                   itemBuilder: (context, index) {
                     return Container(
-                      width: MediaQuery.of(context).size.width / 2.2,
-                      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                      // width: MediaQuery.of(context).size.width / 2.2,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 0),
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 5, vertical: 1),
                       decoration: BoxDecoration(
                         border: Border.all(
+                            width: 0.5,
                             color: const Color.fromARGB(255, 215, 214, 214)),
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(25.0),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.grey.withOpacity(0.1),
-                            offset: Offset(0, 0),
+                            color: const Color.fromARGB(255, 196, 196, 196)
+                                .withOpacity(0.2),
+                            offset: const Offset(0.5, 0.4),
                             blurRadius: 1.0,
                             spreadRadius: 1,
                           ),
                         ],
                       ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(icons[index],
-                              color: Color.fromARGB(255, 17, 79, 90),
-                              size: 30.0),
-                          SizedBox(width: 10),
-                          Text(texts[index],
-                              style: TextStyle(
-                                  fontSize: 16.0,
-                                  color: const Color.fromARGB(255, 0, 0, 0),
-                                  fontWeight: FontWeight.bold)),
-                        ],
+
+                      child: IntrinsicWidth(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(icons[index],
+                                color: const Color.fromARGB(255, 17, 79, 90),
+                                size: 25.0),
+                            const SizedBox(width: 10),
+                            Text(texts[index],
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .displaySmall!
+                                    .copyWith(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .onSurface)),
+                          ],
+                        ),
                       ),
                     );
                   },
                 ),
               ),
-              const SizedBox(height: 10.0),
-              const Center(
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              Center(
                 child: Text(
                   'Here are your latest updates',
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w300,
-                      color: Colors.black),
+                  style: Theme.of(context)
+                      .textTheme
+                      .displaySmall!
+                      .copyWith(color: Theme.of(context).colorScheme.tertiary),
                 ),
               ),
-              const SizedBox(
-                height: 10.0,
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
               ),
               Expanded(
                 child: GridView(
@@ -151,7 +183,7 @@ class Homescreen extends StatelessWidget {
                     mainAxisSpacing: 10,
                     childAspectRatio: 3 / 2,
                   ),
-                  children: [
+                  children: const [
                     CustomButton(
                       buttonText: 'Attendance',
                       icon: Icons.person,

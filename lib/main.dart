@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:new_prism/navbar.dart';
+import 'package:new_prism/screens/student_screens/navbar.dart';
+import 'package:new_prism/providers/is_loading_provider.dart';
 import 'package:new_prism/screens/splash_and_login_screens/onboarding_scrrens/onboarding_screen.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 var greenColor = ColorScheme.fromSeed(
@@ -15,9 +18,16 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
   bool onboarding = prefs.getBool("onboarding") ?? false;
-  runApp(MyApp(
-    onboarding: onboarding,
-  ));
+
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((value) => runApp(MultiProvider(
+            providers: [
+              ChangeNotifierProvider(create: (_) => IsLoadingProvider()),
+            ],
+            child: MyApp(
+              onboarding: onboarding,
+            ),
+          )));
 }
 
 class MyApp extends StatefulWidget {
@@ -41,12 +51,14 @@ class _MyAppState extends State<MyApp> {
           onPrimary: Color.fromARGB(150, 17, 79, 90),
           secondary: Color.fromARGB(255, 251, 171, 58),
           onSecondary: Color.fromARGB(150, 251, 171, 58),
-          background: Color.fromARGB(255, 247, 248, 251),
+          tertiary: Color.fromARGB(255, 79, 79, 79),
+          onTertiary: Color.fromARGB(255, 79, 79, 79),
+          background: Color.fromARGB(255, 244, 244, 244),
           onBackground: Color.fromARGB(110, 247, 248, 251),
           error: Colors.red,
           onError: Colors.red,
           surface: Color.fromARGB(255, 255, 255, 255),
-          onSurface: Color.fromARGB(255, 255, 255, 255),
+          onSurface: Color.fromARGB(255, 0, 0, 0),
           brightness: Brightness.light,
         ),
         textTheme: TextTheme(
@@ -62,7 +74,14 @@ class _MyAppState extends State<MyApp> {
             fontSize: 35,
             fontWeight: FontWeight.bold,
           ),
-          displaySmall: GoogleFonts.pacifico(),
+          headlineLarge:
+              GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.w600),
+          headlineMedium:
+              GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w400),
+          headlineSmall:
+              GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.w400),
+          displaySmall:
+              GoogleFonts.inter(fontSize: 15, fontWeight: FontWeight.w400),
         ),
       ),
 
@@ -74,3 +93,5 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+
+// widget.onboarding ? const Navbar1() :
