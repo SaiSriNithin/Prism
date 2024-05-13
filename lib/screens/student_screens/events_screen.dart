@@ -129,17 +129,15 @@ class EventsScreen extends StatelessWidget {
                                   const Icon(Icons.calendar_today,
                                       color: Colors.black),
                                   const SizedBox(width: 4),
-                                  Text(
-                                    event['eventDate']!,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headlineSmall!
-                                        .copyWith(
-                                          color: Colors.black,
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.w400,
-                                        ),
-                                  ),
+                                  Text(event['eventDate']!,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .headlineSmall!
+                                          .copyWith(
+                                            color: Colors.black,
+                                            fontSize: 15.0,
+                                            fontWeight: FontWeight.w400,
+                                          )),
                                 ],
                               ),
                             ],
