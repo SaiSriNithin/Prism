@@ -1,6 +1,5 @@
 import 'package:crystal_navigation_bar/crystal_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:iconly/iconly.dart';
 import 'package:new_prism/screens/student_screens/home_screen.dart';
 import 'package:new_prism/screens/student_screens/test.dart';
 
@@ -31,26 +30,26 @@ class _Navbar1State extends State<Navbar1> {
   Widget build(BuildContext context) {
     final items = [
       CrystalNavigationBarItem(
-          icon: IconlyBold.home,
-          unselectedIcon: IconlyLight.home,
+          icon: 'assets/icons/home_fill.png',
+          unselectedIcon: 'assets/icons/home.png',
           // selectedColor: const Color.fromARGB(255, 255, 255, 255),
           selectedColor: Theme.of(context).colorScheme.onSurface,
           unselectedColor: Theme.of(context).colorScheme.onSurface),
       CrystalNavigationBarItem(
-          icon: Icons.shopping_cart,
-          unselectedIcon: Icons.shopping_cart_outlined,
+          icon: 'assets/icons/events_fill.png',
+          unselectedIcon: 'assets/icons/events.png',
           // selectedColor: const Color.fromARGB(255, 255, 255, 255),
           selectedColor: Theme.of(context).colorScheme.onSurface,
           unselectedColor: Theme.of(context).colorScheme.onSurface),
       CrystalNavigationBarItem(
-          icon: IconlyBold.paper_plus,
-          unselectedIcon: IconlyLight.search,
+          icon: 'assets/icons/book_fill.png',
+          unselectedIcon: 'assets/icons/book.png',
           // selectedColor: Colors.white
           selectedColor: Theme.of(context).colorScheme.onSurface,
           unselectedColor: Theme.of(context).colorScheme.onSurface),
       CrystalNavigationBarItem(
-          icon: IconlyBold.user_2,
-          unselectedIcon: IconlyLight.user,
+          icon: 'assets/icons/setting_fill.png',
+          unselectedIcon: 'assets/icons/setting.png',
           // selectedColor: Colors.white,
           selectedColor: Theme.of(context).colorScheme.onSurface,
           unselectedColor: Theme.of(context).colorScheme.onSurface),

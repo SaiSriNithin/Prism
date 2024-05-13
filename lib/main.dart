@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:new_prism/screens/student_screens/navbar.dart';
+import 'package:new_prism/providers/attendance_provider.dart';
+import 'package:new_prism/providers/performance_provider.dart';
+import 'package:new_prism/providers/splash_providers.dart';
+import 'package:new_prism/providers/student_provider.dart';
+import 'package:new_prism/providers/who_is_logged_in_provider.dart';
+import 'package:new_prism/screens/splash_and_login_screens/splash_screen.dart';
+// import 'package:new_prism/screens/student_screens/navbar.dart';
 import 'package:new_prism/providers/is_loading_provider.dart';
-import 'package:new_prism/screens/splash_and_login_screens/onboarding_scrrens/onboarding_screen.dart';
+// import 'package:new_prism/screens/splash_and_login_screens/onboarding_scrrens/onboarding_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -22,7 +28,14 @@ void main() async {
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((value) => runApp(MultiProvider(
             providers: [
+              ChangeNotifierProvider(create: (_) => PerformanceProvider()),
+              ChangeNotifierProvider(create: (_) => GetPerformanceData()),
+              ChangeNotifierProvider(create: (_) => AttendanceProvider()),
+              ChangeNotifierProvider(create: (_) => GetAttendanceData()),
               ChangeNotifierProvider(create: (_) => IsLoadingProvider()),
+              ChangeNotifierProvider(create: (_) => StudentProvider()),
+              ChangeNotifierProvider(create: (_) => GetStudentData()),
+              ChangeNotifierProvider(create: (_) => WhoIsLoggedIn()),
             ],
             child: MyApp(
               onboarding: onboarding,
@@ -87,7 +100,7 @@ class _MyAppState extends State<MyApp> {
 
       //this is test tharak
       // home: Homescreen(),
-      home: widget.onboarding ? const Navbar1() : const OnboardingScreen(),
+      home: const SplashScreen(),
       //home: Community(),
       // go to hell
     );
@@ -95,3 +108,4 @@ class _MyAppState extends State<MyApp> {
 }
 
 // widget.onboarding ? const Navbar1() :
+//  widget.onboarding ? const Navbar1() : const OnboardingScreen()

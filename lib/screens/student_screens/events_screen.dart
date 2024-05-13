@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class EventsScreen extends StatelessWidget {
-  EventsScreen({Key? key}) : super(key: key);
+  EventsScreen({super.key});
 
   // Define a list of event details
   final List<Map<String, String>> events = [
@@ -36,7 +36,7 @@ class EventsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       appBar: AppBar(
-        title: Text('Campus Events'),
+        title: const Text('Campus Events'),
       ),
       body: ListView.builder(
         itemCount: events.length,
@@ -55,7 +55,7 @@ class EventsScreen extends StatelessWidget {
                     color: Colors.grey.withOpacity(0.3),
                     spreadRadius: 3,
                     blurRadius: 2,
-                    offset: Offset(0, 3), // changes position of shadow
+                    offset: const Offset(0, 3), // changes position of shadow
                   ),
                 ],
               ),
@@ -84,7 +84,8 @@ class EventsScreen extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 50.0),
                           child: Text(
                             '${event['eventText']}\n Organised by ${event['eventDepartment']}',
-                            style: TextStyle(color: Colors.black, fontSize: 18),
+                            style: const TextStyle(
+                                color: Colors.black, fontSize: 18),
                           ),
                         ),
                       ),
@@ -101,21 +102,23 @@ class EventsScreen extends StatelessWidget {
                             children: [
                               Row(
                                 children: [
-                                  Icon(Icons.location_on, color: Colors.black),
-                                  SizedBox(width: 4),
+                                  const Icon(Icons.location_on,
+                                      color: Colors.black),
+                                  const SizedBox(width: 4),
                                   Text(
                                     event['eventDepartment']!,
-                                    style: TextStyle(color: Colors.black),
+                                    style: const TextStyle(color: Colors.black),
                                   ),
                                 ],
                               ),
                               Row(
                                 children: [
-                                  Icon(Icons.calendar_today,
+                                  const Icon(Icons.calendar_today,
                                       color: Colors.black),
-                                  SizedBox(width: 4),
+                                  const SizedBox(width: 4),
                                   Text(event['eventDate']!,
-                                      style: TextStyle(color: Colors.black)),
+                                      style:
+                                          const TextStyle(color: Colors.black)),
                                 ],
                               ),
                             ],
@@ -127,13 +130,13 @@ class EventsScreen extends StatelessWidget {
                             onPressed: () {
                               // Handle button press
                             },
-                            child: Text(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color.fromARGB(
+                                  255, 17, 79, 90), // Button color
+                            ),
+                            child: const Text(
                               'Join Event',
                               style: TextStyle(color: Colors.white),
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Color.fromARGB(
-                                  255, 17, 79, 90), // Button color
                             ),
                           ),
                         ),
