@@ -84,8 +84,14 @@ class EventsScreen extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 50.0),
                           child: Text(
                             '${event['eventText']}\n Organised by ${event['eventDepartment']}',
-                            style: const TextStyle(
-                                color: Colors.black, fontSize: 18),
+                            style: Theme.of(context)
+                                .textTheme
+                                .headlineMedium!
+                                .copyWith(
+                                  color: Colors.black,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w400,
+                                ),
                           ),
                         ),
                       ),
@@ -107,7 +113,14 @@ class EventsScreen extends StatelessWidget {
                                   const SizedBox(width: 4),
                                   Text(
                                     event['eventDepartment']!,
-                                    style: const TextStyle(color: Colors.black),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headlineMedium!
+                                        .copyWith(
+                                          color: Colors.black,
+                                          fontSize: 17,
+                                          fontWeight: FontWeight.w400,
+                                        ),
                                   ),
                                 ],
                               ),
@@ -116,9 +129,17 @@ class EventsScreen extends StatelessWidget {
                                   const Icon(Icons.calendar_today,
                                       color: Colors.black),
                                   const SizedBox(width: 4),
-                                  Text(event['eventDate']!,
-                                      style:
-                                          const TextStyle(color: Colors.black)),
+                                  Text(
+                                    event['eventDate']!,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headlineSmall!
+                                        .copyWith(
+                                          color: Colors.black,
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                  ),
                                 ],
                               ),
                             ],
