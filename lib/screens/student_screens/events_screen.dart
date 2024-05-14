@@ -33,10 +33,18 @@ class EventsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
-        title: const Text('Campus Events'),
+        title: Text(
+          'Campus Events',
+          style: Theme.of(context)
+              .textTheme
+              .headlineLarge!
+              .copyWith(color: Theme.of(context).colorScheme.primary),
+        ),
       ),
       body: ListView.builder(
         itemCount: events.length,
@@ -45,8 +53,8 @@ class EventsScreen extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.all(15.0),
             child: Container(
-              height: MediaQuery.of(context).size.height / 3.8,
-              width: MediaQuery.of(context).size.width / 1.0,
+              height: height / 3.8,
+              width: width / 1.0,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(12.0),
@@ -110,7 +118,7 @@ class EventsScreen extends StatelessWidget {
                                 children: [
                                   const Icon(Icons.location_on,
                                       color: Colors.black),
-                                  const SizedBox(width: 4),
+                                  SizedBox(width: width * 0.01),
                                   Text(
                                     event['eventDepartment']!,
                                     style: Theme.of(context)
@@ -150,12 +158,19 @@ class EventsScreen extends StatelessWidget {
                               // Handle button press
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color.fromARGB(
-                                  255, 17, 79, 90), // Button color
+                              backgroundColor: Theme.of(context)
+                                  .colorScheme
+                                  .primary, // Button color
                             ),
-                            child: const Text(
+                            child: Text(
                               'Join Event',
-                              style: TextStyle(color: Colors.white),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headlineSmall!
+                                  .copyWith(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .surface),
                             ),
                           ),
                         ),

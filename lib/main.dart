@@ -6,7 +6,7 @@ import 'package:new_prism/providers/performance_provider.dart';
 import 'package:new_prism/providers/splash_providers.dart';
 import 'package:new_prism/providers/student_provider.dart';
 import 'package:new_prism/providers/who_is_logged_in_provider.dart';
-import 'package:new_prism/screens/splash_and_login_screens/splash_screen.dart';
+import 'package:new_prism/screens/splash_and_login_screens/splash_screen/splash_screen.dart';
 // import 'package:new_prism/screens/student_screens/navbar.dart';
 import 'package:new_prism/providers/is_loading_provider.dart';
 // import 'package:new_prism/screens/splash_and_login_screens/onboarding_scrrens/onboarding_screen.dart';
@@ -66,7 +66,7 @@ class _MyAppState extends State<MyApp> {
           onSecondary: Color.fromARGB(150, 251, 171, 58),
           tertiary: Color.fromARGB(255, 79, 79, 79),
           onTertiary: Color.fromARGB(255, 79, 79, 79),
-          background: Color.fromARGB(255, 244, 244, 244),
+          background: Color.fromARGB(255, 247, 247, 247),
           onBackground: Color.fromARGB(110, 247, 248, 251),
           error: Colors.red,
           onError: Colors.red,
@@ -79,14 +79,16 @@ class _MyAppState extends State<MyApp> {
             fontSize: 72,
             fontWeight: FontWeight.bold,
           ),
-          titleLarge: GoogleFonts.oswald(
+          titleLarge: GoogleFonts.poppins(
             fontSize: 30,
             fontStyle: FontStyle.italic,
           ),
-          bodyMedium: GoogleFonts.merriweather(
+          bodyMedium: GoogleFonts.poppins(
             fontSize: 35,
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w500,
           ),
+          titleMedium:
+              GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.w400),
           headlineLarge:
               GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.w600),
           headlineMedium:
@@ -95,6 +97,8 @@ class _MyAppState extends State<MyApp> {
               GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.w400),
           displaySmall:
               GoogleFonts.inter(fontSize: 15, fontWeight: FontWeight.w400),
+          displayMedium:
+              GoogleFonts.poppins(fontSize: 25, fontWeight: FontWeight.w500),
         ),
       ),
 
