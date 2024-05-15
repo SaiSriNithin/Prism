@@ -284,7 +284,3 @@ class Homescreen extends StatelessWidget {
     );
   }
 }
-
-
-
-// hell screen added

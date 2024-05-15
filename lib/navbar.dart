@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:new_prism/home_screen.dart';
-import 'package:new_prism/test.dart';
+import 'package:new_prism/screens/student_screens/home_screen.dart';
+import 'package:new_prism/screens/student_screens/test.dart';
 import 'package:simple_floating_bottom_nav_bar/floating_bottom_nav_bar.dart';
 import 'package:simple_floating_bottom_nav_bar/floating_item.dart';
 
