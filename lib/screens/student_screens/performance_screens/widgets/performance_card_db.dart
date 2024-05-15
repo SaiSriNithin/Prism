@@ -18,8 +18,8 @@ class PerformanceCardB extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     return Container(
       decoration: const BoxDecoration(),
-      height: height / 5.9,
-      width: width / 2.7,
+      height: height / 6.35,
+      width: width / 2.2,
       child: Card(
         surfaceTintColor: Theme.of(context).colorScheme.surface,
         color: Colors.white,
@@ -27,24 +27,22 @@ class PerformanceCardB extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text(
-                name,
-                style: Theme.of(context)
-                    .textTheme
-                    .headlineLarge!
-                    .copyWith(color: Theme.of(context).colorScheme.primary),
-              ),
-              SizedBox(
-                height: height * 0.01,
-              ),
-              Text(amount.toString(),
-                  style: Theme.of(context)
-                      .textTheme
-                      .displayMedium!
-                      .copyWith(color: Theme.of(context).colorScheme.primary)),
-              SizedBox(
-                height: height * 0.01,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(
+                    name,
+                    style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                        color: Theme.of(context).colorScheme.onSurface),
+                  ),
+                  Text(
+                    amount.toString(),
+                    style: Theme.of(context).textTheme.displayMedium!.copyWith(
+                        color: Theme.of(context).colorScheme.secondary),
+                  ),
+                ],
               ),
               Stack(
                 children: [

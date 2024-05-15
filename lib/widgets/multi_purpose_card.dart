@@ -48,11 +48,11 @@ class MultiPurposeCard extends StatelessWidget {
                               category.toString(),
                               style: Theme.of(context)
                                   .textTheme
-                                  .headlineMedium!
+                                  .titleMedium!
                                   .copyWith(
                                       color: Theme.of(context)
                                           .colorScheme
-                                          .primary),
+                                          .onSurface),
                             ),
                             const Icon(Icons.arrow_forward_ios),
                           ],
@@ -73,19 +73,21 @@ class MultiPurposeCard extends StatelessWidget {
                                             .copyWith(
                                                 color: Theme.of(context)
                                                     .colorScheme
-                                                    .primary)),
+                                                    .onSurface)),
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
                                       children: [
-                                        Text(subcategory.toString(),
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .titleMedium!
-                                                .copyWith(
-                                                    color: Theme.of(context)
-                                                        .colorScheme
-                                                        .secondary)),
+                                        Text(
+                                          subcategory.toString(),
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .titleMedium!
+                                              .copyWith(
+                                                  color: Theme.of(context)
+                                                      .colorScheme
+                                                      .onSurface),
+                                        ),
                                       ],
                                     ),
                                   ],
@@ -104,7 +106,7 @@ class MultiPurposeCard extends StatelessWidget {
                                       .copyWith(
                                           color: Theme.of(context)
                                               .colorScheme
-                                              .primary),
+                                              .onSecondary),
                                 ),
                                 const Icon(Icons.arrow_forward_ios),
                               ],

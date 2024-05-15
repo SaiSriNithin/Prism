@@ -62,7 +62,7 @@ class _PerformanceScreenState extends State<PerformanceScreen> {
               style: Theme.of(context)
                   .textTheme
                   .headlineLarge!
-                  .copyWith(color: Theme.of(context).colorScheme.primary),
+                  .copyWith(color: Theme.of(context).colorScheme.onSurface),
             ),
             Image.asset(
               'assets/MREC_logo.png',
@@ -71,8 +71,8 @@ class _PerformanceScreenState extends State<PerformanceScreen> {
             ),
           ],
         ),
-        elevation: 1.0,
-        // shadowColor: Color.fromARGB(255, 59, 58, 58),
+        elevation: 2.0,
+        shadowColor: Color.fromARGB(255, 59, 58, 58),
         // backgroundColor: Colors.white,
       ),
       body: Padding(
@@ -152,8 +152,8 @@ class _PerformanceScreenState extends State<PerformanceScreen> {
                 "These are your updates ",
                 style: Theme.of(context)
                     .textTheme
-                    .displaySmall!
-                    .copyWith(color: Theme.of(context).colorScheme.secondary),
+                    .headlineMedium!
+                    .copyWith(color: Theme.of(context).colorScheme.onSurface),
               ),
             ),
             MultiPurposeCard(

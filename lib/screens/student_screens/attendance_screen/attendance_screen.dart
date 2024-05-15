@@ -10,7 +10,7 @@ class AttendanceScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
+    double height1 = MediaQuery.of(context).size.height;
     // double width = MediaQuery.of(context).size.width;
 
     final userAttendance = Provider.of<AttendanceProvider>(context).attendance;
@@ -24,7 +24,7 @@ class AttendanceScreen extends StatelessWidget {
         "Absent",
         style: Theme.of(context)
             .textTheme
-            .headlineMedium!
+            .titleMedium!
             .copyWith(color: Theme.of(context).colorScheme.error),
       ),
     );
@@ -34,7 +34,7 @@ class AttendanceScreen extends StatelessWidget {
           "Half Day Present",
           style: Theme.of(context)
               .textTheme
-              .headlineMedium!
+              .titleMedium!
               .copyWith(color: Theme.of(context).colorScheme.secondary),
         ),
       );
@@ -44,7 +44,7 @@ class AttendanceScreen extends StatelessWidget {
           "Full Day Present",
           style: Theme.of(context)
               .textTheme
-              .headlineMedium!
+              .titleMedium!
               .copyWith(color: Theme.of(context).colorScheme.primary),
         ),
       );
@@ -59,7 +59,7 @@ class AttendanceScreen extends StatelessWidget {
               "Attendance",
               style: Theme.of(context)
                   .textTheme
-                  .headlineMedium!
+                  .headlineLarge!
                   .copyWith(color: Theme.of(context).colorScheme.onSurface),
             ),
             Image.asset(
@@ -88,7 +88,7 @@ class AttendanceScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: height * 0.01,
+              height: height1 * 0.01,
             ),
             Container(
               height: MediaQuery.of(context).size.height / 4,
@@ -114,10 +114,10 @@ class AttendanceScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    const Text(
+                    Text(
                       "Total percentage ",
-                      style: TextStyle(
-                          fontSize: 25, color: Color.fromARGB(255, 0, 0, 0)),
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                          color: Theme.of(context).colorScheme.onSurface),
                     ),
                     Stack(
                       children: [
@@ -158,7 +158,7 @@ class AttendanceScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: height * 0.02,
+              height: height1 * 0.02,
             ),
             GestureDetector(
               onTap: () {
@@ -202,7 +202,7 @@ class AttendanceScreen extends StatelessWidget {
                               'Monthly Percentage',
                               style: Theme.of(context)
                                   .textTheme
-                                  .headlineLarge!
+                                  .titleMedium!
                                   .copyWith(
                                       color: Theme.of(context)
                                           .colorScheme
@@ -216,7 +216,7 @@ class AttendanceScreen extends StatelessWidget {
                                   .copyWith(
                                       color: Theme.of(context)
                                           .colorScheme
-                                          .onSurface),
+                                          .primary),
                             ),
                           ],
                         ),
@@ -224,7 +224,7 @@ class AttendanceScreen extends StatelessWidget {
                           progressPer:
                               double.parse(userAttendance.MonthlyPercentage) /
                                   100,
-                          barcolor: const Color.fromARGB(255, 243, 180, 33),
+                          barcolor: const Color.fromARGB(255, 251, 171, 58),
                         ),
                         Text(
                           'tap to show more',
@@ -242,7 +242,7 @@ class AttendanceScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: height * 0.02,
+              height: height1 * 0.02,
             ),
             Row(
               children: [
@@ -264,20 +264,21 @@ class AttendanceScreen extends StatelessWidget {
                             "Date  ",
                             style: Theme.of(context)
                                 .textTheme
-                                .headlineLarge!
+                                .titleMedium!
                                 .copyWith(
                                     color: Theme.of(context)
                                         .colorScheme
                                         .onSurface),
                           ),
-                          Text(formattedDate(),
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .headlineLarge!
-                                  .copyWith(
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .onSurface)),
+                          Text(
+                            formattedDate(),
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium!
+                                .copyWith(
+                                  color: Theme.of(context).colorScheme.primary,
+                                ),
+                          ),
                         ],
                       ),
                     ),
@@ -297,16 +298,18 @@ class AttendanceScreen extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Text("Day ",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .headlineLarge!
-                                  .copyWith(
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .onSurface)),
+                          Text(
+                            "Today's Status",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium!
+                                .copyWith(
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onSurface),
+                          ),
                           SizedBox(
-                            height: height * 0.005,
+                            height: height1 * 0.005,
                           ),
                           dayStatus,
                         ],

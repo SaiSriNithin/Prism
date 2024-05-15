@@ -13,13 +13,6 @@ import 'package:new_prism/providers/is_loading_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-var greenColor = ColorScheme.fromSeed(
-  seedColor: const Color.fromARGB(255, 17, 79, 90),
-);
-var goldColor = ColorScheme.fromSeed(
-  seedColor: const Color.fromARGB(255, 251, 171, 58),
-);
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
@@ -76,7 +69,7 @@ class _MyAppState extends State<MyApp> {
         ),
         textTheme: TextTheme(
           displayLarge: const TextStyle(
-            fontSize: 72,
+            fontSize: 50,
             fontWeight: FontWeight.bold,
           ),
           titleLarge: GoogleFonts.poppins(
