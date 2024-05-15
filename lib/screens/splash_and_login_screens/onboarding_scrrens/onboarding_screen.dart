@@ -15,7 +15,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   final pageController = PageController();
 
   bool isLastPage = false;
-  String whatPage = "";
+  String whatPage = "Student";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -97,7 +97,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       ],
                     ),
                     SizedBox(
-                      height: 30,
+                      height: MediaQuery.of(context).size.height * 0.03,
                     ),
                     Text(
                       controller.items[index].title,
@@ -107,7 +107,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           color: Colors.black),
                     ),
                     SizedBox(
-                      height: 40,
+                      height: MediaQuery.of(context).size.height * 0.03,
                     ),
                     Image.asset(controller.items[index].image),
                     const SizedBox(height: 15),

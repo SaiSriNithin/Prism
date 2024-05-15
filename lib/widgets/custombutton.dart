@@ -4,15 +4,17 @@ class CustomButton extends StatelessWidget {
   final String buttonText;
   final IconData icon;
   final String subtext;
+  final String path;
   final Widget onPressed;
 
   const CustomButton({
-    Key? key,
+    super.key,
     required this.buttonText,
     required this.icon,
+    required this.path,
     required this.onPressed,
     required this.subtext,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,42 +27,50 @@ class CustomButton extends StatelessWidget {
         );
       },
       style: ElevatedButton.styleFrom(
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+        surfaceTintColor: Theme.of(context).colorScheme.surface,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(25.0),
+          borderRadius: BorderRadius.circular(20.0),
         ),
         padding: EdgeInsets.all(
-          10.0,
+          MediaQuery.of(context).size.height * 0.01,
         ),
-        elevation: 3,
+        elevation: 1.5,
         shadowColor: Colors.grey.withOpacity(0.3),
 
         // Increase padding for button size
       ),
+      // style: ElevatedButton.styleFrom(
+      //     backgroundColor: Theme.of(context).colorScheme.background),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(
-            icon,
-            color: Color(0xFF114F5A),
-            size: 35,
+          Image.asset(
+            path, // Replace with the path to your SVG file
+            width: 40,
+            height: 40,
           ),
-          SizedBox(height: 5.0),
+          // Icon(
+          //   icon,
+          //   color: Theme.of(context).colorScheme.primary,
+          //   size: 35,
+          // ),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.005),
           Text(
             buttonText,
-            style: TextStyle(
-              fontSize: 14,
-              color: Colors.black,
-            ),
+            style: Theme.of(context)
+                .textTheme
+                .headlineMedium!
+                .copyWith(color: Theme.of(context).colorScheme.onSurface),
           ),
           subtext == ''
-              ? Row(
+              ? const Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Icon(
                       Icons.arrow_forward_ios,
-                      size: 18,
+                      size: 15,
                     ),
                   ],
                 )
@@ -70,12 +80,12 @@ class CustomButton extends StatelessWidget {
                     Text(
                       subtext,
                       style: TextStyle(
-                        color: Color.fromARGB(255, 251, 171, 58),
+                        color: Theme.of(context).colorScheme.secondary,
                       ),
                     ),
-                    Icon(
+                    const Icon(
                       Icons.arrow_forward_ios,
-                      size: 18,
+                      size: 15,
                     ),
                   ],
                 ),
